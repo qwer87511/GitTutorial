@@ -13,15 +13,25 @@ bool Guess(int number)
         target = r.Next() % 100 + 1;
     }
 
-    if (number == target)return true;
+    if (number == target)
+    {
+        std::cout << "Correct !!";
+        target = -1;
+        return true;
+    }
+    else std::cout << "Wrong" << std::endl;
 
-    return true;
+    return false;
 }
 int main(array<System::String^>^ args)
 {
-	int guess;
-	do {
-		std::cin >> guess;
-	} while (!Guess(guess));
-	return 0;
+    int guess;
+
+    do
+    {
+        std::cin >> guess;
+    }
+    while (!Guess(guess));
+
+    return 0;
 }
