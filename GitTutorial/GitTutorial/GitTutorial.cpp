@@ -13,25 +13,55 @@ bool Guess(int number)
         target = r.Next() % 100 + 1;
     }
 
+    <<< <<< < HEAD
+
     if (number == target)
     {
         std::cout << "Correct !!";
         target = -1;
         return true;
     }
-    else std::cout << "Wrong" << std::endl;
+    else if (number > target) std::cout << "Smaller" << std::endl;
+    else if (number < target) std::cout << "Bigger" << std::endl;
 
     return false;
-}
-int main(array<System::String^>^ args)
-{
-    int guess;
-
-    do
+    int main(array<System::String^>^ args)
     {
-        std::cin >> guess;
-    }
-    while (!Guess(guess));
+        int guess;
 
-    return 0;
-}
+        do
+        {
+            std::cin >> guess;
+        }
+        while (!Guess(guess));
+
+        return 0;
+        == == == =
+
+            if (number > target)
+        {
+            std::cout << "Smaller" << std::endl;
+            return false;
+        }
+        else if (number < target)
+        {
+            std::cout << "Bigger" << std::endl;
+            return false;
+        }
+
+        return true;
+    }
+    int main(array<System::String^>^ args)
+    {
+        int guess;
+
+        do
+        {
+            std::cout << "Choose a number between 1 - 100 :";
+            std::cin >> guess;
+        }
+        while (!Guess(guess));
+
+        return 0;
+        >>> >>> > 710ce8f2592da49da3efbff21f187c78448c8ba1
+    }
